@@ -14,6 +14,7 @@ import {
 } from '@angular/forms';
 
 import {ElementBase, animations} from '../form';
+let identifier = 0;
 
 @Component({
   selector: 'form-text',
@@ -49,12 +50,9 @@ export class FormTextComponent extends ElementBase<string> {
 
   public identifier = `form-text-${identifier++}`;
 
-  constructor(
-    @Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
-    @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,
-  ) {
+  constructor(@Optional() @Inject(NG_VALIDATORS) validators: Array<any>,
+              @Optional() @Inject(NG_ASYNC_VALIDATORS) asyncValidators: Array<any>,) {
     super(validators, asyncValidators);
   }
 }
 
-let identifier = 0;
